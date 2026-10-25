@@ -1,0 +1,593 @@
+--- PAGE 1 ---
+RADIX PARTICIPANT BRIEF · OCTOBER 202
+HACKATHON
+Tlent Mtch
+Hckthon
+Build  smll, rel, end-to-end tool tht helps  cndidte
+understnd how redy they ctully re for  specific job.
+2OCT
+Hckthon lunch
+0 AM shrp
+2OCT
+Peer presenttions
+Top  selected
+0OCT
+Expert pnel
+Top  selected
+1OCT
+TGL Blitz
+Grnd finle
+TEAMS OF 5 · 5 ROLES · 1 INTEGRATED TOOL 202
+--- PAGE 2 ---
+RADIX
+PARTICIPANT BRIEF
+Contents
+Everything your tem needs to
+build, integrte nd present
+RADIX Tlent Mtch.
+Red ll of it — not just the prt
+bout your own role.
+2 Oct Lunch · 0 AM
+2 Oct Peer presenttions
+0 Oct Expert pnel
+1 Oct TGL Blitz
+IN THIS BRIEF
+01
+The Chllenge
+Wht you're building nd why it mtters
+0
+02
+Hckthon Timeline
+From lunch on 2 October to the TGL Blitz finle
+0
+0
+Selection & Certifictes
+How tems progress, recognition, nd presenting
+05
+0
+Your Tem
+Five members, five roles, one Scrum Mster
+0
+05
+The Five Roles
+Mission, input, output nd pproch for ech role
+07
+0
+The Shred Dt Contrct
+The 12 skill ctegories nd the JSON exchnged
+0
+07
+Your Test Dt
+Six job descriptions, four smple cndidtes
+11
+08
+How to Build It
+Working stges, the flow, progress trcking
+12
+0
+Stck & Definition of Done
+Tech stck, wht “doneˮ looks like, first steps
+1
+RADIX TALENT MATCH HACKATHON· PARTICIPANT BRIEF 02
+--- PAGE 3 ---
+RADIX
+01THE CHALLENGE
+Wht you're building
+RADIX Tlent Mtch —  smll, rel, end-to-end tool tht helps  cndidte understnd
+how redy they ctully re for  specific job, built on the sme 12-skillset frmework
+nd rel hiring dt RADIX lredy reserched.
+WHEN YOU'RE DONE, SOMEONE SHOULD BE ABLE TO SIT DOWN AT YOUR TOOL AND…
+“
+Ech of the five tem members builds one of these five pieces. Then you
+integrte them into one working tool.
+Why this mtters
+Everything RADIX hs built so fr hs been the compny's side of  plcement pltform. This
+hckthon flips the lens: sme underlying skill-set dt, sme qulity mindset — but built for the
+cndidte trying to figure out if they're ctully redy.
+01
+JD Anlytics
+Uplod  JD nd
+see wht skills it
+ctully requires.
+02
+Resume
+Prsing
+Uplod  resume
+nd see wht
+skills it shows.
+0
+Profile Builder
+Build  full profile
+tht goes beyond
+the resume —
+hckthons,
+certifictions,
+preferred roles.
+0
+Tlent Check
+See how they
+stck up ginst 
+specific
+compny's br,
+cross ll 12
+skillsets.
+05
+Skill Mtching
+See exctly how
+well they mtch
+one specific job
+posting, with 
+score nd  gp
+list.
+LEVELS 1–2
+A 1-prmeter
+reserch frmework, 
+12-skillset competency
+dictionry, nd rel
+hiring-round dt for rel
+compnies.
+LEVEL 
+Vlidting dt
+utomticlly.
+LEVELS –5
+Generting nd
+orchestrting dt with
+gents.
+THIS HACKATHON
+The sme dt, built for
+the cndidte.
+RADIX TALENT MATCH HACKATHON· PARTICIPANT BRIEF · OCTOBER 202 0
+--- PAGE 4 ---
+RADIX
+02HACKATHON TIMELINE
+From lunch to the TGL Blitz stge
+2
+OCT · SAT
+:0 AM SHARP
+Hckthon lunch
+The hckthon is hnded to students t 0 AM shrp. Form your tem of five, ssign
+the five roles, ppoint your Scrum Mster — nd get strted.
+2–28
+OCT
+BUILD PHASE
+Build, integrte, refine
+Work closely together s  tem nd keep mking rel progress. There is mple time
+— use it to build every piece well nd wire them into one working tool.
+28
+OCT · WED
+DEADLINE
+Everything complete
+Your integrted tool nd your presenttion must be fully complete by 28 October.
+2
+OCT · THU
+ROUND 1 · FIRST HALF
+Peer presenttions5 minutes per tem
+Every tem presents its hckthon work. This round is highly importnt — it decides
+which tems move forwrd.
+→Top  tems selected
+0
+OCT · FRI
+ROUND 2 · FIRST HALF
+Expert pnel presenttions5 minutes per tem
+The top  tems present to  pnel of:
+Industry experts TGL experts JSS fculty JSS mngement
+→Top  tems selected
+1
+OCT · SAT
+GRAND FINALE
+TGL Blitz
+The top  tems showcse their hckthon work in the uditorium (detils will be
+shred by the college), before  pnel of:
+JSS Noid mngement Industry experts Investor community & strtups
+TGL tem
+RADIX TALENT MATCH HACKATHON· PARTICIPANT BRIEF · OCTOBER 202 0
+--- PAGE 5 ---
+RADIX
+0SELECTION & CERTIFICATES
+Every prticipnt is recognised
+Every member of every tem receives  certificte. Tems tht progress through the
+presenttion rounds ern higher recognition.
+ALL TEAMS
+Prticiption Certificte
+For every single member who
+works on this hckthon,
+cross ll tems.
+All prticipnts
+TOP  TEAMS
+Pre-Finlist Certificte
+For the  tems selected from
+the peer presenttions, who
+go on to present to the expert
+pnel.
+Selected 2 October
+TOP  TEAMS
+Finlist Certificte
+For the top  tems selected
+by the expert pnel, who
+present t the TGL Blitz grnd
+finle on 1 October.
+Selected 0 October
+YOUR PRESENTATION
+DECIDES YOUR PATH
+5minutes
+per tem — in the peer
+presenttions on 2 October,
+nd before the expert pnel on
+0 October if selected.
+Pln  live wlkthrough of your integrted tool — not just 
+slide deck — nd reherse it end to end. Cover:
+01 The problem
+ 02 Your rchitecture
+0 Live demo
+ 0
+One chllenge you
+fced
+RADIX TALENT MATCH HACKATHON· PARTICIPANT BRIEF · OCTOBER 202 05
+--- PAGE 6 ---
+RADIX
+0YOUR TEAM
+Five members. Five roles.
+One Scrum Mster.
+Every tem hs exctly five members. Ech member owns one of the five roles, nd one
+member is lso ppointed Scrum Mster.
+Illustrtive — the Scrum Mster cn be ny one of the five members. The tem decides.
+Exctly five
+Every tem hs five
+members — no more, no
+fewer.
+One role ech
+Ech member owns nd
+builds one of the five
+pieces.
+One Scrum Mster
+Chosen by the tem. Still
+owns nd builds one
+role.
+Red ll five roles
+Know wht you hnd off,
+nd wht is hnded to
+you.
+1
+ROLE 1
+JD Anlytics
++ SCRUM MASTER
+2
+ROLE 2
+Resume Prsing
+
+ROLE 
+Profile Builder
+
+ROLE 
+Tlent Check
+5
+ROLE 5
+Skill Mtching
+SCRUM MASTER Keeps the tem together nd on trck
+In ddition to building their own role, the Scrum Mster:
+01 Leds the kick-off
+Mkes sure the shred dt contrct is greed
+nd written down where everyone cn see it.
+02 Keeps the tem on schedule
+Mkes sure the tem is progressing well nd
+everything is complete by 28 October.
+0 Owns the milestone trcker
+Keeps every milestone's sttus current: Not
+Strted, In Progress, Blocked or Done.
+0Clers blockers erly
+Wtches the dependencies  Roles  nd 5
+must not be left witing on Profile Builder.
+05 Leds integrtion
+Coordintes wiring the five pieces into one
+flow, nd keeps known bugs logged.
+0 Gets the tem presenttion-redy
+Mkes sure the wlkthrough is prepred nd
+rehersed end to end.
+RADIX TALENT MATCH HACKATHON· PARTICIPANT BRIEF · OCTOBER 202 0
+--- PAGE 7 ---
+RADIX
+05THE FIVE ROLES
+One role, one person, one piece
+Red ll five, not just your own — you need to know wht you're hnding off to, nd
+wht's being hnded to you.
+01
+JD Anlytics
+LLM EXTRACTION
+Given  JD (PDF or Word), extrct  structured list of the skills nd
+technologies it requires.
+INPUT
+One of the  smple JDs, or ny JD, s
+ PDF or DOCX file.
+OUTPUT
+A structured skill list in the shred
+formt.
+APPROACH A strong LngChin/LLM use cse. Feed the JD text to n LLM with 
+prompt tht mps requirements onto the 12 RADIX skill ctegories plus ny nmed
+technologies. Plin keyword-mtching lone will miss  lot — the JDs re written in
+nturl prose on purpose.
+The skill signl is concentrted in “Key Responsibilitiesˮ nd “Wht We're Looking
+Forˮ — strt there.
+02
+Resume Prsing
+LLM EXTRACTION
+Given  resume (PDF or Word), extrct key technologies, skills, nd technicl
+signl.
+INPUT
+One of the  smple resumes, or ny
+resume, s  PDF or DOCX file.
+OUTPUT
+A structured skill list in the shred
+formt, plus fields you cn relibly pull
+(eduction, projects, experience).
+APPROACH The sme LLM-extrction pttern s JD Anlytics, pplied to  differently-
+shped document. Tlk to whoever's building #1  you my be ble to shre rel code,
+not just  dt formt.
+Resumes re messier nd less stndrdized thn JDs. Build in tolernce for formt
+vrition rther thn ssuming one lyout.
+RADIX TALENT MATCH HACKATHON· PARTICIPANT BRIEF · OCTOBER 202 07
+--- PAGE 8 ---
+RADIX 05 · THE FIVE ROLES
+0
+Profile Builder
+PLAIN CODE
+Let  cndidte build  full profile: bsic detils, skills, hckthons/internships,
+certifictions, preferred roles, nd  CV uplod.
+INPUT
+Mnul form entry, idelly pre-filled
+from Resume Prsing's output.
+OUTPUT
+A sved cndidte profile in the shred
+formt.
+APPROACH Mostly good old coding —  form, bsic vlidtion, nd  sve/lod
+mechnism JSON. LngChin isn't relly needed here, but you cn use it cretively if
+you wnt to.
+Everyone else depends on this. Get  sve/lod loop working erly, even with
+dummy dt, so Roles  nd 5 ren't blocked witing on you.
+0
+Tlent Check
+PLAIN CODE
+One button tht compres  cndidte's profile ginst  compny's expected
+br cross ll 12 RADIX skillsets, nd shows the gp.
+INPUT
+A sved profile (from Profile Builder)
+nd  selected compny.
+OUTPUT
+A rediness score nd  per-skillset gp
+brekdown.
+APPROACH Mostly comprison nd scoring logic — plin code. The compny's 12-
+skillset expecttions lredy exist in RADIX's rel dt; you'll be given  locl snpshot of
+it for the  compnies in scope.
+Decide erly wht “redyˮ mens numericlly —  threshold,  weighted score,
+whtever you choose. Tht's  design decision, not just n implementtion detil,
+nd it chnges wht the button ctully shows.
+05
+Skill Mtching
+FUZZY MATCH
+Show how well  cndidte mtches one specific JD — not  compny in
+generl, one ctul posting.
+INPUT
+A profile or resume, plus one extrcted
+JD skill list from Role 1.
+OUTPUT
+A mtch score, plus which skills
+mtched nd which re missing.
+APPROACH Mtching one skill list ginst nother hs rel fuzziness — the sme skill
+gets described differently in different documents. A good plce to use n LLM or simple
+similrity mtching if you hve time; exct/fuzzy string mtching if you don't.
+A mtch score with no explntion is much less useful thn one tht lso sys
+wht's missing. Prioritize the gp list over the number.
+RADIX TALENT MATCH HACKATHON· PARTICIPANT BRIEF · OCTOBER 202 08
+--- PAGE 9 ---
+RADIX
+0THE SHARED DATA CONTRACT
+One lnguge for ll five pieces
+Below is  proposed shpe for the dt pssing between your five pieces —  strting
+point, not  finl spec. Your first job s  tem is to review it, debte it, nd lock in 
+version everyone cn build ginst. Chnge field nmes if you wnt — just don't let the
+debte run long.
+The 12 RADIX skill ctegories
+Every skill is tgged with exctly one category_code .
+COD Coding DSA Dt Structures &Algorithms OOD Object-Oriented Design
+APTI Aptitude COMM Communiction AI AI
+CLOUD Cloud SQL SQL SWE Softwre Engineering
+SYSD System Design NETW Networking OS Operting Systems
+Anything outside these twelve uses OTHER .
+The building block:  single skill
+<skill>
+{
+  "skill_name":    "...",
+  "category_code": "DSA|COD|OOD|APTI|COMM|AI|CLOUD|SQL|SWE|SYSD|NETW|OS|OTHER",
+  "evidence":      "short quote or reason",
+  "confidence":    "high|medium|low"
+}
+skill_name
+The skill or technology.
+category_code
+One of the 12 codes, or
+OTHER.
+evidence
+A short quote or reson.
+confidence
+High, medium or low.
+RADIX TALENT MATCH HACKATHON· PARTICIPANT BRIEF · OCTOBER 202 0
+--- PAGE 10 ---
+RADIX 0 · SHARED DATA CONTRACT
+Who hnds wht to whom
+ROLE TAKES IN HANDS OFF
+JD Anlytics A JD PDF or DOCX JD skill list  Skill Mtching
+Resume Prsing A resume PDF or DOCX Resume skill list  Profile Builder
+Profile Builder Form entry, pre-filled from Resume Prsing Sved profile  Tlent Check, Skill Mtching
+Tlent Check Sved profile + selected compny Rediness score + per-skillset gps
+Skill Mtching Profile or resume + one JD skill list Mtch score + mtched / missing skills
+Wht ech piece hnds off
+Extrcted skill list ROLE 1 ROLE 2
+{
+  "source_type": "jd|resume",
+  "source_file": "...",
+  "company":     "...",
+  "role":        "...",
+  "skills":      [ <skill>, ... ]
+}
+Cndidte profile ROLE 
+{
+  "name":            "...",
+  "email":           "...",
+  "education":       "...",
+  "skills":          [ <skill>, ... ],
+  "hackathons":      [...],
+  "internships":     [...],
+  "certifications":  [...],
+  "preferred_roles": [...],
+  "cv_file":         "..."
+}
+Tlent Check result ROLE 
+{
+  "company": "...",
+  "skillset_gap": [ {
+    "category_code":   "...",
+    "required_level":  1-10,
+    "candidate_level": 1-10,
+    "gap":             true|false
+  } ],
+  "readiness_score": 0-100
+}
+Skill Mtching result ROLE 5
+{
+  "jd_source_file": "...",
+  "match_score":    0-100,
+  "matched_skills": [...],
+  "missing_skills": [...]
+}
+LOCK IT BEFORE YOU BUILD
+Agree on the shred JSON schem for skills, profile nd mtch, nd write it down somewhere
+everyone cn see.
+RADIX TALENT MATCH HACKATHON· PARTICIPANT BRIEF · OCTOBER 202 10
+--- PAGE 11 ---
+RADIX
+07YOUR TEST DATA
+Build ginst rel mteril
+Your hckthon pck contins  rel job descriptions cross  compnies nd  smple
+resumes — ech supplied in both PDF nd Word (.docx) formt.
+JOB DESCRIPTIONS ·  COMPANIES, 2 ROLES EACH
+COMPANY ROLE LOCATION
+Google LLC Softwre Engineer SWE
+Dt Scientist
+Bengluru, Indi Hybrid)
+Bengluru, Indi
+Microsoft Corportion Softwre Engineer
+Dt Anlyst
+Hyderbd, Indi
+Hyderbd, Indi
+Orcle Finncil Services
+Softwre
+Associte Softwre Engineer
+Appliction Support Anlyst
+Bengluru / Mumbi, Indi
+Bengluru / Chenni, Indi
+SAMPLE CANDIDATES · DELIBERATELY DIFFERENT SKILL PROFILES
+CANDIDATE PROFILE FIT, AS STATED IN THE RESUME
+Anny Ro Systems-lening generlist Strong fit for SWE-hevy roles, weker fit for dt roles
+Krthik Subrmnim Dt-lening nlyst Strong fit for Dt Scientist / Dt Anlyst roles, weker fit
+for pure SWE roles
+Priy Menon Entry-level, support-oriented Best fit for the Orcle FSS roles, weker fit for Google /
+Microsoft
+Rohn Verm Strong ll-rounder Competitive fit cross nerly every role in the pck
+Becuse the profiles differ on purpose, Tlent Check nd Skill Mtching results should visibly differ from person
+to person.
+TALENT CHECK NEEDS ONE MORE FILE
+Ech compny's expected level cross ll 12 skillsets. You'll work from  locl JSON snpshot of
+this dt for the  compnies rther thn live Supbse — sk your fcilittor for
+talent_check_company_skillsets.json  if you don't see it in your strter folder.
+RADIX TALENT MATCH HACKATHON· PARTICIPANT BRIEF · OCTOBER 202 11
+--- PAGE 12 ---
+RADIX
+08HOW TO BUILD IT
+From blnk pge to one working tool
+THE INTEGRATED FLOW
+Pick  JD › Prse  resume › Build / updte profile › Run Tlent Check › Run Skill Mtching
+Trck your progress
+  RADIX_Tlent_Mtch_Milestone_Checklist.xlsx
+Whole tem 10 milestones
+JD Anlytics 2 milestones
+Resume Prsing 2 milestones
+Profile Builder 2 milestones
+Tlent Check 2 milestones
+Skill Mtching 2 milestones
+Your milestone checklist breks the work into
+cler milestones — ech with its owner nd 
+definition of done. The Scrum Mster keeps it
+current; the Summry sheet shows progress
+by phse nd by owner.
+Not Strted In Progress Blocked
+Done
+Pln
+WHOLE TEAM
+Red this brief nd the JD
+/ resume pck. Lock the
+dt contrct, nmes nd
+file loctions. Everyone
+knows exctly wht
+they're building nd wht
+shpe their output tkes.
+Build
+EACH MEMBER
+Build your own piece. Test
+ginst the smple JDs
+nd resumes s you go —
+don't wit until integrtion
+to discover your JSON
+doesn't prse.
+Integrte
+WHOLE TEAM
+Bring ll five pieces
+together into one working
+flow. It never goes
+perfectly on the first try —
+expect some “why won't
+this run togetherˮ time.
+Prepre
+WHOLE TEAM
+Get the wlkthrough redy
+nd reherse the live
+demo end to end, without
+ mentor's help.
+RADIX TALENT MATCH HACKATHON· PARTICIPANT BRIEF · OCTOBER 202 12
+1 2  
+--- PAGE 13 ---
+RADIX
+0STACK & DEFINITION OF DONE
+Build it right
+Tech stck
+LANGUAGE Python throughout — sme stck s the rest of RADIX.
+AI LAYER Use LngChin or n LLM gent wherever it genuinely helps  JD Anlytics, Resume
+Prsing, nd the fuzzy-mtching prt of Skill Mtching re strong cndidtes. Where
+plin code is simpler nd more relible  Profile Builder's form, Tlent Check's scoring
+logic — use plin code. An gent tht's hrder to debug thn the problem it solves isn't
+ win.
+FRONTEND Rect, mtching the RADIX portl's stck.
+DATA STORAGE Supbse  JSON for most things.
+Wht “doneˮ looks like
+All 5 pieces run on their own
+ginst t lest 2 of the smple
+JDs / resumes.
+The 5 pieces re wired into one
+flow, end to end, for t lest
+one compny / JD / cndidte
+combintion.
+Tlent Check nd Skill Mtching
+give visibly different results for
+different cndidtes — the
+scoring logic isn't  constnt.
+Your first steps on 2 October
+Tem of five formed All five roles ssigned
+Scrum Mster ppointed Everyone hs red this brief nd the JD /
+resume pck
+Dt contrct greed nd written down talent_check_company_skillsets.json  in
+hnd
+RADIX TALENT MATCH HACKATHON· PARTICIPANT BRIEF · OCTOBER 202 1
+--- PAGE 14 ---
+RADIX TALENT MATCH HACKATHON
+2 October 202
+:0 AM shrp
+Form your tem of five. Appoint your Scrum Mster. Get strted.
+RADIX

@@ -1,0 +1,27 @@
+/* RADIX SkillSync Component Enhancements */
+
+.spin-animation {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media print {
+  .sidebar, .top-nav, .btn, .card-actions, .mobile-toggle {
+    display: none !important;
+  }
+  body, .app-shell, .main-wrapper, .main-content {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+  }
+  .radix-card {
+    background: #ffffff !important;
+    border: 1px solid #ccc !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+  }
+}

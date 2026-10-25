@@ -1,0 +1,62 @@
+{
+  "Google LLC": {
+    "company_name": "Google LLC",
+    "badge": "Tier 1 Tech",
+    "description": "Global technology leader in search, cloud computing, software, and AI. High engineering bar with heavy focus on foundational algorithms, system design, and distributed systems.",
+    "role_focus": ["Software Engineer (SWE)", "Data Scientist"],
+    "skillset_expectations": [
+      { "category_code": "DSA", "category_name": "Data Structures & Algorithms", "required_level": 9, "weight": 1.2, "importance": "critical", "description": "High bar in complex data structures, algorithms, asymptotic analysis" },
+      { "category_code": "COD", "category_name": "Coding", "required_level": 9, "weight": 1.2, "importance": "critical", "description": "Flawless code writing, edge cases, language fluency" },
+      { "category_code": "SYSD", "category_name": "System Design", "required_level": 8, "weight": 1.1, "importance": "high", "description": "Large-scale distributed systems, reliability at scale" },
+      { "category_code": "SWE", "category_name": "Software Engineering", "required_level": 8, "weight": 1.0, "importance": "high", "description": "Testing, code reviews, technical debt, CI/CD" },
+      { "category_code": "AI", "category_name": "AI & Machine Learning", "required_level": 8, "weight": 1.0, "importance": "high", "description": "ML fundamentals, statistical reasoning, model evaluation" },
+      { "category_code": "CLOUD", "category_name": "Cloud & DevOps", "required_level": 8, "weight": 0.9, "importance": "medium", "description": "Cloud architecture, distributed services, GCP/infrastructure" },
+      { "category_code": "OOD", "category_name": "Object-Oriented Design", "required_level": 8, "weight": 0.9, "importance": "medium", "description": "Design patterns, clean abstractions, extensibility" },
+      { "category_code": "OS", "category_name": "Operating Systems", "required_level": 7, "weight": 0.9, "importance": "medium", "description": "Concurrency, threads, virtual memory, Linux fundamentals" },
+      { "category_code": "NETW", "category_name": "Networking", "required_level": 7, "weight": 0.8, "importance": "medium", "description": "TCP/UDP, HTTP, latency, socket communication" },
+      { "category_code": "SQL", "category_name": "SQL & Databases", "required_level": 7, "weight": 0.8, "importance": "medium", "description": "Complex queries, indexing, schema design" },
+      { "category_code": "COMM", "category_name": "Communication", "required_level": 8, "weight": 1.0, "importance": "high", "description": "Explaining tradeoffs, technical articulation, cross-functional teamwork" },
+      { "category_code": "APTI", "category_name": "Aptitude", "required_level": 8, "weight": 0.8, "importance": "medium", "description": "Quantitative reasoning, problem deconstruction under ambiguity" }
+    ]
+  },
+  "Microsoft Corporation": {
+    "company_name": "Microsoft Corporation",
+    "badge": "Enterprise Cloud",
+    "description": "Enterprise cloud and productivity pioneer behind Azure, Windows, and Microsoft 365. Strong emphasis on software craftsmanship, cloud services, and clean architecture.",
+    "role_focus": ["Software Engineer", "Data Analyst"],
+    "skillset_expectations": [
+      { "category_code": "SWE", "category_name": "Software Engineering", "required_level": 9, "weight": 1.2, "importance": "critical", "description": "Production software lifecycle, clean code, maintainability, testing" },
+      { "category_code": "COD", "category_name": "Coding", "required_level": 8, "weight": 1.1, "importance": "critical", "description": "Practical coding, problem implementation, pattern matching" },
+      { "category_code": "CLOUD", "category_name": "Cloud & DevOps", "required_level": 9, "weight": 1.2, "importance": "critical", "description": "Azure cloud ecosystem, microservices, containerization" },
+      { "category_code": "SYSD", "category_name": "System Design", "required_level": 8, "weight": 1.0, "importance": "high", "description": "Scalable systems, notification services, fault tolerance" },
+      { "category_code": "DSA", "category_name": "Data Structures & Algorithms", "required_level": 8, "weight": 1.0, "importance": "high", "description": "Hash maps, trees, interval problems, performance optimization" },
+      { "category_code": "SQL", "category_name": "SQL & Databases", "required_level": 8, "weight": 1.0, "importance": "high", "description": "Telemetry schema design, normalization, query performance" },
+      { "category_code": "OOD", "category_name": "Object-Oriented Design", "required_level": 8, "weight": 0.9, "importance": "high", "description": "SOLID principles, extensible modular architecture" },
+      { "category_code": "AI", "category_name": "AI & Machine Learning", "required_level": 8, "weight": 0.9, "importance": "medium", "description": "Applied statistics, analytics, ML literacy" },
+      { "category_code": "COMM", "category_name": "Communication", "required_level": 8, "weight": 1.0, "importance": "high", "description": "Stakeholder communication, documentation, collaboration" },
+      { "category_code": "OS", "category_name": "Operating Systems", "required_level": 7, "weight": 0.8, "importance": "medium", "description": "Process scheduling, memory management, concurrency primitives" },
+      { "category_code": "NETW", "category_name": "Networking", "required_level": 7, "weight": 0.8, "importance": "medium", "description": "REST APIs, timeouts, networking lifecycle" },
+      { "category_code": "APTI", "category_name": "Aptitude", "required_level": 7, "weight": 0.7, "importance": "medium", "description": "Analytical problem solving, trend interpretation" }
+    ]
+  },
+  "Oracle Financial Services Software": {
+    "company_name": "Oracle Financial Services Software",
+    "badge": "Fintech & Banking",
+    "description": "Enterprise financial products powering global tier-1 banking institutions (FLEXCUBE, OBDX). Heavy emphasis on SQL, data integrity, client SLA delivery, and enterprise stability.",
+    "role_focus": ["Associate Software Engineer", "Application Support Analyst"],
+    "skillset_expectations": [
+      { "category_code": "SQL", "category_name": "SQL & Databases", "required_level": 9, "weight": 1.3, "importance": "critical", "description": "Relational databases, transaction safety, high-throughput queries" },
+      { "category_code": "SWE", "category_name": "Software Engineering", "required_level": 8, "weight": 1.1, "importance": "high", "description": "Enterprise SDLC, Agile/Waterfall, rigorous documentation" },
+      { "category_code": "COD", "category_name": "Coding", "required_level": 7, "weight": 1.0, "importance": "high", "description": "Core Java, C++, array and string manipulation" },
+      { "category_code": "COMM", "category_name": "Communication", "required_level": 8, "weight": 1.1, "importance": "high", "description": "Client-facing communication, incident escalation management" },
+      { "category_code": "APTI", "category_name": "Aptitude", "required_level": 8, "weight": 1.0, "importance": "high", "description": "Time-and-work, ratios, logical deductions, banking problem-solving" },
+      { "category_code": "OS", "category_name": "Operating Systems", "required_level": 7, "weight": 0.9, "importance": "medium", "description": "Linux command line, batch processing, log inspection" },
+      { "category_code": "NETW", "category_name": "Networking", "required_level": 7, "weight": 0.9, "importance": "medium", "description": "Client-server architecture, latency diagnosis, network troubleshooting" },
+      { "category_code": "OOD", "category_name": "Object-Oriented Design", "required_level": 7, "weight": 0.8, "importance": "medium", "description": "Object-oriented principles, polymorphism, interfaces" },
+      { "category_code": "CLOUD", "category_name": "Cloud & DevOps", "required_level": 7, "weight": 0.8, "importance": "medium", "description": "Enterprise cloud deployment, hosting environments" },
+      { "category_code": "DSA", "category_name": "Data Structures & Algorithms", "required_level": 6, "weight": 0.8, "importance": "medium", "description": "Foundational structures, stacks, queues, linked lists" },
+      { "category_code": "SYSD", "category_name": "System Design", "required_level": 6, "weight": 0.7, "importance": "low", "description": "Tiered architecture, service integration" },
+      { "category_code": "AI", "category_name": "AI & Machine Learning", "required_level": 6, "weight": 0.7, "importance": "low", "description": "Basic data analysis and automated alerting" }
+    ]
+  }
+}
