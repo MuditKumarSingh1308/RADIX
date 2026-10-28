@@ -312,13 +312,21 @@ def run_talent_check(req: TalentCheckRequest):
 
     if not company_data:
         # Fuzzy fallback match
+        requested_company = req.company.strip().lower()
+
         for comp_name, data in benchmarks_data.items():
-            if req.company.lower() in comp_name.lower() or comp_name.lower() in req.company.lower():
+            if (
+                requested_company in comp_name.lower()
+                or comp_name.lower() in requested_company
+            ):
                 company_data = data
                 break
 
     if not company_data:
-        raise HTTPException(status_code=404, detail=f"Company '{req.company}' not found in benchmark expectations.")
+        raise HTTPException(
+            status_code=404,
+            detail=f"Company '{req.company}' not found in benchmark expectations."
+        )
 
     expectations = company_data.get("skillset_expectations", [])
     candidate_profile = req.profile
@@ -326,25 +334,36 @@ def run_talent_check(req: TalentCheckRequest):
 
     total_weighted_ratio = 0.0
     total_weights = 0.0
+
     category_scores = []
     strengths = []
     gaps = []
+    skillset_gap = []
 
     for exp in expectations:
         code = exp["category_code"]
-        name = exp.get("category_name", RADIX_CATEGORIES.get(code, {}).get("name", code))
+        name = exp.get(
+            "category_name",
+            RADIX_CATEGORIES.get(code, {}).get("name", code)
+        )
         required = exp["required_level"]
         weight = exp.get("weight", 1.0)
         importance = exp.get("importance", "medium")
 
-        # Candidate level
         candidate_level = candidate_categories.get(code, 6)
-        ratio = min(1.0, candidate_level / required) if required > 0 else 1.0
+
+        # Keep levels inside the agreed 1-10 range.
+        candidate_level = max(1, min(10, float(candidate_level)))
+        required = max(1, min(10, float(required)))
+
+        ratio = min(1.0, candidate_level / required)
 
         total_weighted_ratio += ratio * weight
         total_weights += weight
 
         diff = candidate_level - required
+        meets_expectation = diff >= 0
+
         cat_info = {
             "code": code,
             "name": name,
@@ -353,34 +372,59 @@ def run_talent_check(req: TalentCheckRequest):
             "importance": importance,
             "weight": weight,
             "diff": diff,
-            "meets_expectation": diff >= 0,
+            "meets_expectation": meets_expectation,
         }
+
         category_scores.append(cat_info)
 
-        if diff >= 0:
+        if meets_expectation:
             strengths.append(cat_info)
         else:
             gaps.append(cat_info)
 
-    # Sort gaps by impact (weight * shortfall)
-    gaps.sort(key=lambda g: g["weight"] * abs(g["diff"]), reverse=True)
+        # Role 4 contract:
+        # gap is true when the candidate is below the required level.
+        skillset_gap.append({
+            "category_code": code,
+            "required_level": required,
+            "candidate_level": candidate_level,
+            "gap": not meets_expectation,
+        })
 
-    overall_score = round((total_weighted_ratio / total_weights) * 100) if total_weights > 0 else 0
+    # Prioritize the largest weighted shortfalls first.
+    gaps.sort(
+        key=lambda item: item["weight"] * abs(item["diff"]),
+        reverse=True
+    )
+
+    readiness_score = (
+        round((total_weighted_ratio / total_weights) * 100)
+        if total_weights > 0
+        else 0
+    )
 
     return {
+        # Agreed Role 4 contract
+        "company": company_data.get("company_name", req.company),
+        "skillset_gap": skillset_gap,
+        "readiness_score": readiness_score,
+
+        # Legacy fields retained to reduce frontend breakage
         "status": "success",
-        "company": req.company,
-        "score": overall_score,
+        "score": readiness_score,
         "candidate_name": candidate_profile.get("name", "Candidate"),
         "category_scores": category_scores,
         "strengths": strengths,
         "gaps": gaps,
         "prioritized_actions": [
-            f"Close top gap in {g['name']} (Current: {g['candidate_level']}/10 vs Required: {g['required_level']}/10)"
-            for g in gaps[:3]
-        ]
+            (
+                f"Close top gap in {item['name']} "
+                f"(Current: {item['candidate_level']}/10 "
+                f"vs Required: {item['required_level']}/10)"
+            )
+            for item in gaps[:3]
+        ],
     }
-
 
 @app.post("/api/skill-match")
 def run_skill_match(req: SkillMatchRequest):

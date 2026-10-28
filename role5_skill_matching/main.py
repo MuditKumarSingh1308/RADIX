@@ -39,35 +39,56 @@ class MatchRequest(BaseModel):
 
 # 2. THE FUZZY MATCHING LOGIC
 def calculate_match(jd_skills: List[Skill], candidate_skills: List[Skill], threshold: int = 80):
+    # 1. Deduplicate JD skills while preserving original Skill objects
+    seen_jd = set()
+    unique_jd_skills = []
+    for s in jd_skills:
+        norm = s.skill_name.lower().strip()
+        if norm and norm not in seen_jd:
+            seen_jd.add(norm)
+            unique_jd_skills.append(s)
+
+    # 2. Map normalized candidate skill names to original strings
+    candidate_skill_map = {}
+    for s in candidate_skills:
+        norm = s.skill_name.lower().strip()
+        if norm and norm not in candidate_skill_map:
+            candidate_skill_map[norm] = s.skill_name
+
     matched_skills = []
     missing_skills = []
-    
-    candidate_skill_names = [s.skill_name.lower() for s in candidate_skills]
 
-    for req_skill in jd_skills:
-        req_name = req_skill.skill_name.lower()
-        is_matched = False
-        
-        for cand_name in candidate_skill_names:
-            similarity = fuzz.partial_ratio(req_name, cand_name)
-            
-            if similarity >= threshold:
-                matched_skills.append({
-                    "jd_skill": req_skill.skill_name,
-                    "candidate_skill": cand_name.title(),
-                    "category": req_skill.category_code,
-                    "match_confidence": similarity
-                })
-                is_matched = True
-                break
-                
-        if not is_matched:
+    for req_skill in unique_jd_skills:
+        req_name = req_skill.skill_name.lower().strip()
+        best_cand_name = None
+        best_score = 0
+
+        # Evaluate ALL candidate skills to find the BEST score
+        for cand_norm, cand_original in candidate_skill_map.items():
+            if req_name == cand_norm:
+                similarity = 100
+            else:
+                # Use token_sort_ratio to avoid partial substring traps (e.g. 'c' matching 'css')
+                similarity = fuzz.token_sort_ratio(req_name, cand_norm)
+
+            if similarity > best_score:
+                best_score = similarity
+                best_cand_name = cand_original
+
+        if best_score >= threshold and best_cand_name is not None:
+            matched_skills.append({
+                "jd_skill": req_skill.skill_name,
+                "candidate_skill": best_cand_name,
+                "category": req_skill.category_code,
+                "match_confidence": best_score
+            })
+        else:
             missing_skills.append({
                 "skill_name": req_skill.skill_name,
                 "category": req_skill.category_code
             })
 
-    total_required = len(jd_skills)
+    total_required = len(unique_jd_skills)
     score = (len(matched_skills) / total_required * 100) if total_required > 0 else 0
 
     return {
