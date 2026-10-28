@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   CheckCircle2,
@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { useApp } from '../hooks/useApp';
 import { talentCheckService } from '../services/talentCheckService';
+import { apiClient } from '../services/api';
 import { matchService } from '../services/matchService';
 import Card from '../components/ui/Card';
 import ScoreRing from '../components/ui/ScoreRing';
@@ -25,17 +26,189 @@ export default function TalentCheckPage() {
   const [activeTab, setActiveTab] = useState('all');
   const [showFormulaModal, setShowFormulaModal] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const [evaluation, setEvaluation] = useState(null);
+  const [isEvaluating, setIsEvaluating] = useState(true);
+  const [evaluationError, setEvaluationError] = useState('');
+  const [retryCount, setRetryCount] = useState(0);
+
 
   const companies = talentCheckService.getCompanies();
-  const evaluation = talentCheckService.calculateReadiness(activeCandidate, company);
 
-  if (!evaluation || !activeCandidate) {
-    return (
-      <div style={{ padding: '60px', textAlign: 'center' }}>
-        <p>Calculating company readiness intelligence...</p>
-      </div>
-    );
+  useEffect(() => {
+  let cancelled = false;
+
+  async function loadEvaluation() {
+    if (!activeCandidate) {
+      setEvaluation(null);
+      setEvaluationError('No candidate is selected. Please select a candidate first.');
+      setIsEvaluating(false);
+      return;
+    }
+
+    setIsEvaluating(true);
+    setEvaluationError('');
+    setEvaluation(null);
+
+    try {
+      const candidateCategories =
+        activeCandidate.categoryScores &&
+        Object.keys(activeCandidate.categoryScores).length > 0
+          ? activeCandidate.categoryScores
+          : activeCandidate.categories;
+
+      if (!candidateCategories || Object.keys(candidateCategories).length === 0) {
+        throw new Error(
+          'This candidate profile has no competency scores. Add candidate skill levels before running Talent Check.'
+        );
+      }
+
+      const result = await apiClient.runTalentCheck(
+        {
+          name: activeCandidate.name,
+          categories: candidateCategories,
+        },
+        company
+      );
+
+      if (result.source !== 'live_backend' || !result.data) {
+        throw new Error(
+          'The RADIX backend is unavailable. Start the FastAPI server and try again.'
+        );
+      }
+
+      const data = result.data;
+      const details = talentCheckService.getCompanyDetails(company);
+      const expectations = details.skillset_expectations || [];
+
+      const backendScores = Array.isArray(data.category_scores)
+        ? data.category_scores
+        : [];
+
+      if (backendScores.length === 0 || !Number.isFinite(Number(data.readiness_score))) {
+        throw new Error('The backend returned an incomplete Talent Check evaluation.');
+      }
+
+      const breakdown = backendScores.map((score) => {
+        const code = score.code || score.category_code;
+        const expected = expectations.find((item) => item.category_code === code) || {};
+
+        const candidateLevel = Number(score.candidate_level);
+        const requiredLevel = Number(score.required_level ?? expected.required_level);
+        const weight = Number(score.weight ?? expected.weight ?? 1);
+        const delta = candidateLevel - requiredLevel;
+        const gap = score.meets_expectation !== undefined
+          ? !score.meets_expectation
+          : delta < 0;
+
+        let status = 'meets';
+        if (delta >= 1) status = 'exceeds';
+        else if (delta === -1) status = 'minor_gap';
+        else if (delta < -1) status = 'major_gap';
+
+        return {
+          category_code: code,
+          category_name: score.name || expected.category_name || code,
+          required_level: requiredLevel,
+          candidate_level: candidateLevel,
+          weight,
+          importance: score.importance || expected.importance || 'medium',
+          description: expected.description || '',
+          gap,
+          delta,
+          status,
+          color: '#45D6FF',
+          priority_score: gap ? weight * Math.abs(delta) : 0,
+        };
+      });
+
+      const meetingSkills = breakdown.filter((item) => !item.gap);
+      const skillGaps = breakdown
+        .filter((item) => item.gap)
+        .sort((a, b) => b.priority_score - a.priority_score);
+
+      const readinessScore = Number(data.readiness_score);
+
+      let readinessTier = 'Early Preparation Stage';
+      let readinessBadgeClass = 'badge-danger';
+
+      if (readinessScore >= 85) {
+        readinessTier = 'Interview Ready (Exceeds Benchmark)';
+        readinessBadgeClass = 'badge-success';
+      } else if (readinessScore >= 70) {
+        readinessTier = 'Competitive Match (Targeted Polish)';
+        readinessBadgeClass = 'badge-primary';
+      } else if (readinessScore >= 55) {
+        readinessTier = 'Developing Readiness (Key Gaps to Close)';
+        readinessBadgeClass = 'badge-warning';
+      }
+
+      const mappedEvaluation = {
+        companyName: data.company || company,
+        companyBadge: details.badge,
+        companyDescription: details.description,
+        readinessScore,
+        readinessTier,
+        readinessBadgeClass,
+        totalCategories: breakdown.length,
+        categoriesMeeting: meetingSkills.length,
+        categoriesGap: skillGaps.length,
+        breakdown,
+        meetingSkills,
+        skillGaps,
+        formulaExplanation: {
+          formula: 'Readiness = backend-calculated weighted competency score',
+          weightsTotal: breakdown.reduce((sum, item) => sum + item.weight, 0).toFixed(2),
+          evaluatedCategories: breakdown.length,
+        },
+      };
+
+      if (!cancelled) {
+        setEvaluation(mappedEvaluation);
+      }
+    } catch (error) {
+      if (!cancelled) {
+        setEvaluationError(error.message || 'Unable to evaluate candidate readiness.');
+      }
+    } finally {
+      if (!cancelled) {
+        setIsEvaluating(false);
+      }
+    }
   }
+
+  loadEvaluation();
+
+  return () => {
+    cancelled = true;
+  };
+
+  }, [activeCandidate, company, retryCount]);
+
+  if (!activeCandidate) {
+  return (
+  <div style={{ padding: '60px', textAlign: 'center' }}> <p>No candidate is selected. Please select a candidate first.</p> </div>
+  );
+  }
+
+  if (isEvaluating) {
+  return (
+  <div style={{ padding: '60px', textAlign: 'center' }}> <p>Evaluating candidate readiness with the RADIX backend...</p> </div>
+  );
+  }
+
+  if (evaluationError || !evaluation) {
+  return (
+  <div style={{ padding: '60px', textAlign: 'center' }}> <h2>Talent Check couldn't be completed</h2>
+  <p style={{ margin: '16px 0', color: 'var(--text-muted)' }}>
+  {evaluationError || 'The backend did not return an evaluation.'} </p>
+  <button
+  className="btn btn-primary"
+  onClick={() => setRetryCount((count) => count + 1)}
+  >
+  Try again </button> </div>
+  );
+  }
+
 
   const filteredCategories = evaluation.breakdown.filter((cat) => {
     if (activeTab === 'gaps') return cat.gap;
@@ -227,10 +400,16 @@ export default function TalentCheckPage() {
         >
           <div style={{ padding: '8px 0', textAlign: 'center' }}>
             <RadarChart
-              candidateScores={activeCandidate.categoryScores}
-              benchmarkScores={benchmarkScores}
-              size={360}
+            candidateScores={Object.fromEntries(
+            evaluation.breakdown.map((item) => [
+            item.category_code,
+            item.candidate_level,
+            ])
+            )}
+            benchmarkScores={benchmarkScores}
+            size={360}
             />
+
             <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', marginTop: '12px', fontSize: '12px' }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#45D6FF' }}>
                 <span style={{ width: '12px', height: '12px', background: '#45D6FF', borderRadius: '3px' }} />
